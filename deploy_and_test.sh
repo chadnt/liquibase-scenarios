@@ -11,7 +11,7 @@ then
     message='Scenario 2: tests should pass... for now.'
     changelog=changelog.yaml
 else
-    message='Tests should pass.'
+    message='Default scenario: all tests should pass.'
     changelog=changelog.yaml
 fi
 

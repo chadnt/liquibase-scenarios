@@ -53,16 +53,16 @@ databaseChangeLog:
       author: chad.hodnett
       changes:
       - sqlFile:
-          path : tests/will_call_proc1_tests.sps.sql
+          path : tests/test_package.sps.sql
           splitStatements: false
       rollback:
-        drop package will_call_proc1_tests
+        drop package test_package
   - changeSet:
       id: will_call_proc1_tests.spb.sql
       author: chad.hodnett
       changes:
       - sqlFile:
-          path: tests/will_call_proc1_tests.spb.sql
+          path: tests/test_package.spb.sql
           splitStatements: false
       rollback:
-        drop package body will_call_proc1_tests
+        drop package body test_package
