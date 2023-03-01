@@ -10,6 +10,10 @@ elif [ $scenario -eq 2 ]
 then
     message='Scenario 2: a packaged procedure references a missing column. Tests should fail.'
     changelog=changelog_missing_column.yaml
+elif [ $scenario -eq 3 ]
+then
+    message='Scenario 3: attempt to insert wrong data type. Tests should fail.'
+    changelog=changelog_insert_wrong_datatype.yaml
 else
     message='Default scenario: all tests should pass.'
     changelog=changelog.yaml

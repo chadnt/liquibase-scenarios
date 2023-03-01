@@ -66,3 +66,18 @@ databaseChangeLog:
           splitStatements: false
       rollback:
         drop package body test_package
+  - changeSet:
+      id: demo data
+      author: chad.hodnett
+      changes:
+      - insert:
+          tableName: demo_table
+          columns:
+          - column:
+              name: id
+              value: 1
+        #   - column:
+        #       name: description
+        #       value: this is a description
+        rollback:
+            delete from demo_table where id=1

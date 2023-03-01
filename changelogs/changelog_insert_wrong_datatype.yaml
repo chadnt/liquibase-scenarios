@@ -75,9 +75,9 @@ databaseChangeLog:
           columns:
           - column:
               name: id
-              value: 1
+              value: one
           - column:
               name: description
               value: this is a description
         rollback:
-            delete from demo_table where id=1
+            delete from demo_table where id='one'

@@ -17,7 +17,7 @@ Can the Liquibase Enterprise forecast feature detect and report when:
 
 1. a packaged procedure references a missing procedure
 2. a packaged procedure references a missing column
-3. a migration script attempts to populate the field with the wrong data type
+3. a migration script attempts to populate a field with the wrong data type
 4. a migration script calls a packaged procedure with an invalid parameter
 
 ### Default scenario: all test pass
@@ -49,7 +49,9 @@ Testing...
 - Tests fail on error due to the missing reference.
 
 ### Scenario 3: wrong data type
-To-do
+- The changelog `changelog_insert_wrong_datatype.yaml` attempts to insert `'one'` into numeric column `demo_table.id`.
+- Insert fails due invalid number (ORA-017222)
+- Test verifying `demo_table` contains data fails.
 
-### Scenario 4: bad aparameter
+### Scenario 4: bad parameter
 To-do
