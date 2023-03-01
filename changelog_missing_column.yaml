@@ -9,27 +9,27 @@ databaseChangeLog:
           - column:
               name: id
               type: number(8,0)
-          - column:
-              name: description
-              type: varchar2(200)
-#   - changeSet:
-#       id: referenced_package.sps.sql
-#       author: chad.hodnett
-#       changes:
-#       - sqlFile:
-#           path : packages/referenced_package.sps.sql
-#           splitStatements: false
-#       rollback:
-#         drop package referenced_package
-#   - changeSet:
-#       id: referenced_package.spb.sql
-#       author: chad.hodnett
-#       changes:
-#       - sqlFile:
-#           path: packages/referenced_package.spb.sql
-#           splitStatements: false
-#       rollback:
-#         drop package body referenced_package
+        #   - column:
+        #       name: description
+        #       type: varchar2(200)
+  - changeSet:
+      id: referenced_package.sps.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path : packages/referenced_package.sps.sql
+          splitStatements: false
+      rollback:
+        drop package referenced_package
+  - changeSet:
+      id: referenced_package.spb.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path: packages/referenced_package.spb.sql
+          splitStatements: false
+      rollback:
+        drop package body referenced_package
   - changeSet:
       id: caller_package.sps.sql
       author: chad.hodnett
