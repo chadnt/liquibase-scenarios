@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: referenced_package.sps.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path : referenced_package.sps.sql
+          relativeToChangelogFile: true
+          splitStatements: false
+      rollback:
+        drop package referenced_package
+  - changeSet:
+      id: referenced_package.spb.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path: referenced_package.spb.sql
+          relativeToChangelogFile: true
+          splitStatements: false
+      rollback:
+        drop package body referenced_package

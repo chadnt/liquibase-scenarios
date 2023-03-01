@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: will_call_proc1_tests.sps.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path : test_package.sps.sql
+          relativeToChangelogFile: true
+          splitStatements: false
+      rollback:
+        drop package test_package
+  - changeSet:
+      id: will_call_proc1_tests.spb.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path: test_package.spb.sql
+          relativeToChangelogFile: true
+          splitStatements: false
+      rollback:
+        drop package body test_package

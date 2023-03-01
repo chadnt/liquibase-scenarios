@@ -1,71 +1,14 @@
 databaseChangeLog:
-  - changeSet:
-      id: demo_table
-      author: chad.hodnett
-      changes:
-      - createTable:
-          tableName: demo_table
-          columns:
-          - column:
-              name: id
-              type: number(8,0)
-          - column:
-              name: description
-              type: varchar2(200)
-  - changeSet:
-      id: referenced_package.sps.sql
-      author: chad.hodnett
-      changes:
-      - sqlFile:
-          path : packages/referenced_package.sps.sql
-          splitStatements: false
-      rollback:
-        drop package referenced_package
-  - changeSet:
-      id: referenced_package.spb.sql
-      author: chad.hodnett
-      changes:
-      - sqlFile:
-          path: packages/referenced_package.spb.sql
-          splitStatements: false
-      rollback:
-        drop package body referenced_package
-  - changeSet:
-      id: caller_package.sps.sql
-      author: chad.hodnett
-      changes:
-      - sqlFile:
-          path : packages/caller_package.sps.sql
-          splitStatements: false
-      rollback:
-        drop package caller_package
-  - changeSet:
-      id: caller_package.spb.sql
-      author: chad.hodnett
-      changes:
-      - sqlFile:
-          path: packages/caller_package.spb.sql
-          splitStatements: false
-      rollback:
-        drop package body caller_package
-  - changeSet:
-      id: will_call_proc1_tests.sps.sql
-      author: chad.hodnett
-      changes:
-      - sqlFile:
-          path : tests/test_package.sps.sql
-          splitStatements: false
-      rollback:
-        drop package test_package
-  - changeSet:
-      id: will_call_proc1_tests.spb.sql
-      author: chad.hodnett
-      changes:
-      - sqlFile:
-          path: tests/test_package.spb.sql
-          splitStatements: false
-      rollback:
-        drop package body test_package
+  - include:
+      file: changelogs/objects/packages/referenced_package_changelog.yaml
+  - include:
+      file: changelogs/objects/packages/caller_package_changelog.yaml
+  - include:
+      file: changelogs/objects/tests/test_package_changelog.yaml
+  - include:
+      file: changelogs/objects/tables/demo_table_changelog.yaml
+#   - include:
+#       file: changelogs/objects/tables/demo_data_changelog.yaml
   - changeSet:
       id: demo data
       author: chad.hodnett
