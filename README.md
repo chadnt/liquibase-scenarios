@@ -61,8 +61,3 @@ Default scenario will add foo and remove foo.
 Bad scenario will try to remove foo without adding it.
 My guess is forecaster will not be able to detect this kind of "runtime" error in advance.
 Would be impressive if it can.
-
-## De-duplicate
-This is just a toy project, but the duplication in the changelogs is getting a bit unwieldy, already.
-Take a moment and focus minimizing duplication before proceeding to scenario 4.
-Nothing too fancy, just make it easier to read and scale.

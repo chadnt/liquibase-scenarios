@@ -1,11 +1,11 @@
 databaseChangeLog:
+  - include:
+      file: changelogs/objects/tables/demo_table_changelog.yaml
 #   - include:
 #       file: changelogs/objects/packages/referenced_package_changelog.yaml
   - include:
       file: changelogs/objects/packages/caller_package_changelog.yaml
   - include:
       file: changelogs/objects/tests/test_package_changelog.yaml
-  - include:
-      file: changelogs/objects/tables/demo_table_changelog.yaml
   - include:
       file: changelogs/objects/tables/demo_data_changelog.yaml

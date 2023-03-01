@@ -14,5 +14,19 @@ as
     begin
         dbms_output.put_line(v_description);
     end references_column_type;
+
+    procedure add_column(
+        v_name in varchar2)
+    is
+    begin
+        null;
+    end add_column;
+
+    procedure remove_column(
+        v_name in varchar2)
+    is
+    begin
+        null;
+    end remove_column;
     
 end caller_package;
