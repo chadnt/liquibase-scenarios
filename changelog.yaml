@@ -1,5 +1,18 @@
 databaseChangeLog:
   - changeSet:
+      id: demo_table
+      author: chad.hodnett
+      changes:
+      - createTable:
+          tableName: demo_table
+          columns:
+          - column:
+              name: id
+              type: number(8,0)
+          - column:
+              name: description
+              type: varchar2(200)
+  - changeSet:
       id: referenced_package.sps.sql
       author: chad.hodnett
       changes:

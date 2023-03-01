@@ -1,15 +1,20 @@
 #! /bin/sh
 
-if [ "$1" == "bad" ]
+scenario=${1-0}
+
+if [ $scenario -eq 1 ]
 then
-    message='Dependencies are intentionally missing. Tests should fail.'
-    changelog=changelog_bad.yaml
+    message='Scenario 1: a packaged procedure references a missing procedure. Tests should fail.'
+    changelog=changelog_missing_procedure.yaml
+elif [ $scenario -eq 2 ]
+then
+    message='Scenario 2: tests should pass... for now.'
+    changelog=changelog.yaml
 else
     message='Tests should pass.'
     changelog=changelog.yaml
 fi
 
-echo 'Deploy and test a packaged procedure which calls another procedure.'
 echo ${message}
 echo
 echo 'Deploying...'
@@ -19,5 +24,5 @@ echo 'Testing...'
 ./test.sh
 echo
 echo 'Rolling back changes...'
-liquibase --changelog-file=${changelog} rollback-count 6 &> /dev/null
+liquibase --changelog-file=${changelog} rollback-count 999 &> /dev/null
 echo 'Done.'
