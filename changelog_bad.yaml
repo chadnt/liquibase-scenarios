@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: no-op1
+      author: chad.hodnett
+      changes:
+      - empty: {}
+  - changeSet:
+      id: no-op2
+      author: chad.hodnett
+      changes:
+      - empty: {}
+  - changeSet:
+      id: caller_package.sps.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path : packages/caller_package.sps.sql
+          splitStatements: false
+      rollback:
+        drop package caller_package
+  - changeSet:
+      id: caller_package.spb.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path: packages/caller_package.spb.sql
+          splitStatements: false
+      rollback:
+        drop package body caller_package
+  - changeSet:
+      id: will_call_proc1_tests.sps.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path : tests/will_call_proc1_tests.sps.sql
+          splitStatements: false
+      rollback:
+        drop package will_call_proc1_tests
+  - changeSet:
+      id: will_call_proc1_tests.spb.sql
+      author: chad.hodnett
+      changes:
+      - sqlFile:
+          path: tests/will_call_proc1_tests.spb.sql
+          splitStatements: false
+      rollback:
+        drop package body will_call_proc1_tests
