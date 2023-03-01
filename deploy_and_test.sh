@@ -18,11 +18,11 @@ fi
 echo ${message}
 echo
 echo 'Deploying...'
-liquibase --changelog-file=${changelog} --showbanner=false update
+liquibase --changelog-file=changelogs/${changelog} --showbanner=false update
 echo
 echo 'Testing...'
 ./test.sh
 echo
 echo 'Rolling back changes...'
-liquibase --changelog-file=${changelog} rollback-count 999 &> /dev/null
+liquibase --changelog-file=changelogs/${changelog} rollback-count 999 &> /dev/null
 echo 'Done.'
