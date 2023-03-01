@@ -24,6 +24,7 @@ Can the Liquibase Enterprise forecast feature detect and report when:
 - The default changelog `changelog.yaml` installs all objects.
 - All tests pass.
 
+Example output
 ```
 $> ./deploy_and_test.sh
 Default scenario: all tests should pass.
@@ -34,7 +35,7 @@ Liquibase command 'update' was executed successfully.
 
 Testing...
 [...]
-1 tests, 0 failed, 0 errored, 0 disabled, 0 warning(s)
+2 tests, 0 failed, 0 errored, 0 disabled, 0 warning(s)
 ```
 
 ### Scenario 1: procedure reference a missing procedure
