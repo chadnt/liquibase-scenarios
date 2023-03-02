@@ -8,7 +8,4 @@ as
     procedure add_column(
         v_name in varchar2);
 
-    procedure remove_column(
-        v_name in varchar2);
-
 end caller_package;
