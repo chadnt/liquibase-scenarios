@@ -13,7 +13,9 @@ as
     procedure test_demo_table_not_empty;
 
     -- %test(Test add_column)
-    -- %rollback(manual)
     procedure test_add_column;
+
+    -- %test(Test remove_column)
+    procedure test_remove_column;
 
 end test_package;

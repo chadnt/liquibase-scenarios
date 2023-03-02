@@ -28,4 +28,11 @@ as
         execute immediate 'alter table demo_table drop column foo';
     end test_add_column;
 
+    procedure test_remove_column
+    is
+    begin
+        execute immediate 'alter table demo_table add foo varchar2(10)';
+        caller_package.remove_column('foo');
+    end test_remove_column;
+
 end test_package;
