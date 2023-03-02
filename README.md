@@ -12,6 +12,11 @@ deploy_and_test.sh
 deploy_and_test.sh 1
 ```
 
+Test script `test.sh` is not included. Simply invokes utlpsql-cli using the appropriate credentials.
+``` sh
+utplsql run -cq user/password@hostname/servicename
+```
+
 ## Scenarios
 Can the Liquibase Enterprise forecast feature detect and report when:
 
@@ -50,14 +55,10 @@ Testing...
 
 ### Scenario 3: wrong data type
 - The changelog `changelog_insert_wrong_datatype.yaml` attempts to insert `'one'` into numeric column `demo_table.id`.
-- Insert fails due invalid number (ORA-017222)
-- Test verifying `demo_table` contains data fails.
+- Insert fails due invalid number (ORA-017222).
+- Deployment fails on error.
 
 ### Scenario 4: bad parameter
-To-do
-This scenario is intended to simulate how PSI uses procedures for DDL.
-Create new procedures to add and remove columns from demo_table.
-Default scenario will add foo and remove foo.
-Bad scenario will try to remove foo without adding it.
-My guess is forecaster will not be able to detect this kind of "runtime" error in advance.
-Would be impressive if it can.
+- The changelog `changelog_add_existing_column.yaml` attempts to add an existing column (`demo_table.description)`.
+- Operation fails (ORA-01430).
+- Deployment fails on error.

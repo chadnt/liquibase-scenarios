@@ -9,6 +9,9 @@ as
     -- %test(Test references_column_type)
     procedure test_references_column_type;
 
+    -- %test(demo_table should not be empty)
+    procedure test_demo_table_not_empty;
+
     -- %test(Test add_column)
     procedure test_add_column;
 
