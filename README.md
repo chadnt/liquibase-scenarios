@@ -40,7 +40,7 @@ Liquibase command 'update' was executed successfully.
 
 Testing...
 [...]
-2 tests, 0 failed, 0 errored, 0 disabled, 0 warning(s)
+4 tests, 0 failed, 0 errored, 0 disabled, 0 warning(s)
 ```
 
 ### Scenario 1: procedure reference a missing procedure
