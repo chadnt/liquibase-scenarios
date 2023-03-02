@@ -19,14 +19,14 @@ as
         v_name in varchar2)
     is
     begin
-        null;
+        execute immediate 'alter table demo_table add ' || v_name || ' varchar2(10)';
     end add_column;
 
     procedure remove_column(
         v_name in varchar2)
     is
     begin
-        null;
+        execute immediate 'alter table demo_table drop column ' || v_name;
     end remove_column;
     
 end caller_package;

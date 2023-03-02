@@ -21,4 +21,11 @@ as
         ut.expect(l_count).to_be_greater_than(0);
     end test_demo_table_not_empty;
 
+    procedure test_add_column
+    is
+    begin
+        caller_package.add_column('foo');
+        execute immediate 'alter table demo_table drop column foo';
+    end test_add_column;
+
 end test_package;
